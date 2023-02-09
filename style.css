@@ -14,21 +14,49 @@
     display: flex;
     flex-direction: column;
 } */
-
-#main {
+/* * {
+    box-sizing: border-box;
+} */
+body {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    font-family: cursive;
 }
 
-.column {
-    border: 2px solid black;
-    width: 33%;
-    height: 33%;
+#main {
+    background-color: goldenrod;
+    border: solid 5px black;
+    /* padding: ; */
+    width: 39%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 1%;
+    
 }
 
 .row {
-    display: flex;
-    flex-direction: row;
-    width: 33%;
-    height: 33%;
+    background-image: url("https://img.freepik.com/free-photo/texture-poster-drawing-canvas-creative_1194-8218.jpg?w=740&t=st=1675959022~exp=1675959622~hmac=f569629b330bc423ef22217771678c981939573fa19fa2926e9261c9d6b895f6forcejpeg=true");
+    background-size: 95% auto;
+    /* background-repeat: no-repeat; */
+    width: 100px;
+    height: 90px;
+    border: 3px solid black;
+    margin: 1%;
+    padding: 2%;
 }
+
+#mainHeader {
+    display: block;
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    border-radius: 50%;
+    font-size: 50px;
+    padding: 1% 2%;
+}
+
