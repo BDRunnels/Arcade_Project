@@ -40,9 +40,9 @@ body {
 }
 
 .row {
-    background-image: url("https://img.freepik.com/free-photo/texture-poster-drawing-canvas-creative_1194-8218.jpg?w=740&t=st=1675959022~exp=1675959622~hmac=f569629b330bc423ef22217771678c981939573fa19fa2926e9261c9d6b895f6forcejpeg=true");
+    background-image: url("https://img.freepik.com/free-photo/texture-poster-drawing-canvas-creative_1194-8218.jpg?w=740&t=st=1675959022~exp=1675959622~hmac=f569629b330bc423ef22217771678c981939573fa19fa2926e9261c9d6b895f6forcejpeg=true"); /* X Image */
+    background-image: url("https://img.freepik.com/free-photo/spray-paint_1194-2409.jpg?w=740&t=st=1675960076~exp=1675960676~hmac=b403e799a70bccf3bd14af5a2ed5fe64d105dff6f2ba4d4c3551fe4dbd4e0983"); /* O image */
     background-size: 95% auto;
-    /* background-repeat: no-repeat; */
     width: 100px;
     height: 90px;
     border: 3px solid black;
@@ -51,7 +51,7 @@ body {
 }
 
 #mainHeader {
-    display: block;
+    /* display: block; */
     background-color: black;
     color: white;
     border: 1px solid black;
