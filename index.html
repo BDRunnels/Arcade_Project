@@ -4,27 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connect 4</title>
+    <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" defer src="index.js"></script>
 </head>
 <body>
     <h1 id="mainHeader"> Tic Tac Toe</h1>
-    <p class="clickParagraph"> Click <u>here</u> to decide if X or O starts!</p>
+    <p id="startGame" class="clickParagraph"> Click Here to Start the Game!</p>
     <p class="clickParagraph"> Best of 5! </p>
-    <table>
-        <section id="scoreKeeping"> 
-        <div id="playerOne">Player One (X) 
-            <div id="playerOneScore"> 0 </div>
-        </div>
+
+    <div id="playerOneScore"> X Games Won : 0 </div>
+    <div id="playerTwoScore"> O Games Won : 0 </div>
+    <section id="scoreKeeping"> 
+        <div id="playerOne"> </div>
+            <!-- <div id="playerOneScore"> Games Won : 0 </div> -->
         
-        <div id="playerTwo">Player Two (O) 
-            <div id="playerTwoScore"> 0 </div>
-        </div>
-        
+        <div id="playerTwo"> </div>   
+        <!-- <div id="playerOneScore"> Games Won : 0 </div> -->
+    
     </section>
 
+    <table>
+        <!-- <section id="scoreKeeping"> 
+            <div id="playerOne">Player One (X)</div>
+            <div id="playerOneScore"> 0 </div>
+        
+        
+            <div id="playerTwo">Player Two (O) </div>
+            <div id="playerTwoScore"> 0 </div>
+        </section> -->
     </table>
+    
+    
     <!-- <div id="main">
         <div class="row"></div>
         <div class="row"></div>

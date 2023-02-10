@@ -10,6 +10,45 @@ const board = [
         [undefined, undefined, undefined],
         [undefined, undefined, undefined]
     ];
+let startGame = document.getElementById("startGame")
+let playerOneName = document.getElementById("playerOne")
+let playerTwoName = document.getElementById("playerTwo")
+let playerOneScore = document.getElementById("playerOneScore")
+let playerTwoScore = document.getElementById("playerTwoScore")
+
+
+
+// function startGameFunction () {
+//     let namePrompt = prompt("Player One Name")
+//     let namePrompt2 = prompt("Player Two Name")
+    
+//     if (namePrompt !== undefined) {
+//         playerOneName.innerHTML = namePrompt + " (X)"
+//         playerOneName.style.textDecoration = "underline"
+//     } 
+//     if (namePrompt2 !== undefined) { 
+//         playerTwoName.innerHTML = namePrompt2 + " (O)"
+//         playerTwoName.style.textDecoration = "underline"
+//     }
+
+//     tableElement.style.visibility = "visible"
+
+//     function whoMovesFirst () {
+//         let randomNum = Math.random()
+//         console.log(randomNum)
+//         // alert("Who Moves First?")
+//         if (randomNum >= .5) {
+//             alert(namePrompt + " Moves First!")
+//         } else {
+//             alert(namePrompt2 + " Moves First!")
+//         }
+//     }
+
+//     whoMovesFirst()
+// }
+
+// startGame.addEventListener("click", startGameFunction)
+
 
 // function buildGameBoard() {
 //     for (let rowsSoFar = 0; rowsSoFar < board.length; rowsSoFar++) {
@@ -73,7 +112,47 @@ function buildGameBoard () {
 }
 
 
-
-
 window.addEventListener("DOMContentLoaded", buildGameBoard)
+
+let namePrompt = prompt("Player (X) Name")
+let namePrompt2 = prompt("Player (O) Name")
+function startGameFunction () {
+    // let namePrompt = prompt("Player (X) Name")
+    // let namePrompt2 = prompt("Player (O) Name")
+    
+    if (namePrompt !== undefined) {
+        playerOneName.innerHTML = namePrompt + " (X)"
+        // playerOneName.style.textDecoration = "underline"
+        playerOneName.style.border = "2px solid black"
+
+    } 
+    if (namePrompt2 !== undefined) { 
+        playerTwoName.innerHTML = namePrompt2 + " (O)"
+        // playerTwoName.style.textDecoration = "underline"
+        playerTwoName.style.border = "2px solid black"
+    } 
+
+    tableElement.style.visibility = "visible"
+
+    function whoMovesFirst () {
+        let randomNum = Math.random()
+        console.log(randomNum)
+        // alert("Who Moves First?")
+        if (randomNum >= .5) {
+            alert(namePrompt + " Moves First!")
+            playerOneName.classList.add("first")
+            playerTwoName.classList.add("second")
+        } else {
+            alert(namePrompt2 + " Moves First!")
+            playerTwoName.classList.add("first")
+            playerOneName.classList.add("second")
+        }
+    }
+    
+    whoMovesFirst()
+}
+
+startGame.addEventListener("click", startGameFunction)
+
+////////////////////////////////////////////////////
 
