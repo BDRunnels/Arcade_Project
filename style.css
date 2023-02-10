@@ -73,6 +73,7 @@ table {
     font-size: 3em;
     font-weight: bolder;
     font-family: monospace;
+    margin: 1%;
 }
 
 #scoreKeeping {
@@ -80,6 +81,13 @@ table {
     width: 100%;
     height: 1%;
     justify-content: space-between;
+    background-color: black;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    /* border-radius: 25%;
+    padding:  */
+    border: 1px dotted white;
+    visibility: hidden;
 }
 
 #playerOne, #playerTwo {

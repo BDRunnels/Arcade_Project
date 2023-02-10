@@ -15,6 +15,7 @@ let playerOneName = document.getElementById("playerOne")
 let playerTwoName = document.getElementById("playerTwo")
 let playerOneScore = document.getElementById("playerOneScore")
 let playerTwoScore = document.getElementById("playerTwoScore")
+let scoreKeeping = document.getElementById("scoreKeeping")
 
 
 
@@ -123,13 +124,13 @@ function startGameFunction () {
     if (namePrompt !== undefined) {
         playerOneName.innerHTML = namePrompt + " (X)"
         // playerOneName.style.textDecoration = "underline"
-        playerOneName.style.border = "2px solid black"
+        // playerOneName.style.border = "2px solid white"
 
     } 
     if (namePrompt2 !== undefined) { 
         playerTwoName.innerHTML = namePrompt2 + " (O)"
         // playerTwoName.style.textDecoration = "underline"
-        playerTwoName.style.border = "2px solid black"
+        // playerTwoName.style.border = "2px solid white"
     } 
 
     tableElement.style.visibility = "visible"
@@ -150,6 +151,7 @@ function startGameFunction () {
     }
     
     whoMovesFirst()
+    scoreKeeping.style.visibility = "visible";
 }
 
 startGame.addEventListener("click", startGameFunction)
