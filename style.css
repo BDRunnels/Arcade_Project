@@ -35,7 +35,7 @@ table {
     width: auto;
     height: auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: row ;
     justify-content: space-between;
     /* padding: 1%; */
     visibility: hidden;
@@ -81,12 +81,12 @@ table {
     width: 100%;
     height: 1%;
     justify-content: space-between;
-    background-color: black;
+    /* background-color: black; */
     margin-bottom: 2%;
     margin-top: 2%;
     /* border-radius: 25%;
     padding:  */
-    border: 1px dotted white;
+    /* border: 1px dashed white; */
     visibility: hidden;
 }
 
@@ -98,7 +98,10 @@ table {
     /* border: 2px solid black; */
     background-color: black;
     color: white;
-    border-radius: 20%;
+    border-radius: 50%;
+    padding: 1% 3%;
+    height: 1.5em;
+    width: auto;
 }
 
 #playerOne {
@@ -113,4 +116,25 @@ table {
     text-align: left;
     font-family: monospace;
     font-size: 2em;
+    text-decoration: underline;
+}
+
+.X {
+    background-image: url("https://img.freepik.com/free-photo/texture-poster-drawing-canvas-creative_1194-8218.jpg?w=740&t=st=1675959022~exp=1675959622~hmac=f569629b330bc423ef22217771678c981939573fa19fa2926e9261c9d6b895f6forcejpeg=true"); 
+    background-size: contain;
+}
+
+.O {
+    background-image: url("https://img.freepik.com/free-photo/spray-paint_1194-2409.jpg?w=740&t=st=1675960076~exp=1675960676~hmac=b403e799a70bccf3bd14af5a2ed5fe64d105dff6f2ba4d4c3551fe4dbd4e0983");
+    background-size: contain;
+}
+
+#gameTable {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
 }
