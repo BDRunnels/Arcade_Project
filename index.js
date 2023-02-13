@@ -5,7 +5,7 @@
 
 let mainSection = document.getElementById("main-section")
 let tableElement = document.getElementsByTagName("table")[0]
-const board = [
+let board = [
         [undefined, undefined, undefined],
         [undefined, undefined, undefined],
         [undefined, undefined, undefined]
@@ -18,6 +18,9 @@ let playerTwoScore = document.getElementById("playerTwoScore")
 let scoreKeeping = document.getElementById("scoreKeeping")
 let scoreX = 0
 let scoreO = 0
+let newButton = document.getElementById("newButton")
+
+
 
 
 
@@ -154,6 +157,7 @@ function startGameFunction () {
     
     whoMovesFirst()
     scoreKeeping.style.visibility = "visible";
+    newButton.style.visibility = "hidden";
 }
 
 startGame.addEventListener("click", startGameFunction)
@@ -170,9 +174,9 @@ function playerMove (clickEvent) {
     // board[targetIndexPosition] = player1
     // console.log(board)
     // console.log(typeof clickEvent.target.classList[2])
-    console.log(clickEvent.target.parentNode)
-    console.log("This is target:" + targetIndexPosition)
-    console.log("This is nested:" + nestedIndexPosition)
+    // console.log(clickEvent.target.parentNode)
+    // console.log("This is target:" + targetIndexPosition)
+    // console.log("This is nested:" + nestedIndexPosition)
         
     
 
@@ -240,26 +244,38 @@ tableElement.addEventListener("click", playerMove)
 function checkWin () {
     
     
+    
     if ((board[0][0] == "X" && board[0][1] == "X" && board[0][2] == "X") || (board[1][0] == "X" && board[1][1] == "X" && board[1][2] == "X") || (board[2][0] == "X" && board[2][1] == "X" && board[2][2] == "X") || (board[0][0] == "X" && board[1][0] == "X" && board[2][0] == "X") || (board[0][1] == "X" && board[1][1] == "X" && board[2][1] =="X") || (board[0][2] == "X" && board[1][2] == "X" && board[2][2] =="X") || (board[0][0] == "X" && board[1][1] == "X" && board[2][2] =="X") || (board[0][2] == "X" && board [1][1] == "X" && board[2][0] =="X")) {
-        scoreX = scoreX + 1
-        playerOneScore.textContent = playerOneScore.textContent + scoreX
+        scoreX++
+        playerOneScore.textContent = playerOneScore.textContent + scoreX // WHY IS SCORE NOT UPDATING PROPERLY FOR BOTH X & O.
         const message = "Game Over! X Wins!"
         alert(message)
+        tableElement.style.visibility = "hidden";
+        newButton.style.visibility = "visible";
+        
+
 
         
         
         
         
     } else if ((board[0][0] =="O" && board[0][1] =="O" && board[0][2] =="O") || (board[1][0] =="O" && board[1][1] =="O" && board[1][2] =="O") || (board[2][0] =="O" && board[2][1] =="O" && board[2][2] =="O") || (board[0][0] =="O" && board[1][0] =="O" && board[2][0] =="O") || (board[0][1] =="O" && board[1][1] =="O" && board[2][1]  =="O") || (board[0][2] =="O" && board[1][2] =="O" && board[2][2] =="O") || (board[0][0] =="O" && board[1][1] =="O" && board[2][2]) =="O" || (board[0][2] =="O" && board [1][1] =="O" && board[2][0] =="O")) {
-        scoreO = scoreO + 1
+        scoreO++
         playerTwoScore.textContent = playerTwoScore.textContent + scoreO // WHY IS SCORE NOT UPDATING PROPERLY FOR BOTH X & O.
         const message2 = "Game Over! O Wins!"
         alert(message2)
+        tableElement.style.visibility = "hidden";
+        newButton.style.visibility = "visible";
+        
+        
         
 
 
     } else if ((board[0][0] == "X" || board[0][0] == "O") && (board[0][1] == "X" || board[0][1] == "O") && (board[0][2] == "X" || board[0][2] == "O") && (board[1][0] == "X" || board[1][0] == "O") && (board[1][1] == "X" || board[1][1] == "O") && (board[1][2] == "X" || board[1][2] == "O") && (board[2][0] == "X" || board[2][0] == "O") && (board[2][1] == "X" || board[2][1] == "O") && (board[2][2] == "X" || board[2][2]== "O") ) {
-        alert("Tie Game!")
+        const message3 = "Tie Game!"
+        alert(message3)
+        tableElement.style.visibility = "hidden";
+        newButton.style.visibility = "visible";
     }
 }
         
@@ -272,4 +288,117 @@ function checkWin () {
 // NEED TO FIGURE OUT SCORE COUNTER 
 // TIES
 // Hide board after a win and put a restart button that reloads another game board with [undefined]
+
+//////// RESET BUTTON
+
+
+function resetBoard (event) {
+    let removeDiv1 = document.getElementsByClassName("nested")[0]
+    let removeDiv2 = document.getElementsByClassName("nested")[1]
+    let removeDiv3 = document.getElementsByClassName("nested")[2]
+    let removeDiv4 = document.getElementsByClassName("nested")[3]
+    let removeDiv5 = document.getElementsByClassName("nested")[4]
+    let removeDiv6 = document.getElementsByClassName("nested")[5]
+    let removeDiv7 = document.getElementsByClassName("nested")[6]
+    let removeDiv8 = document.getElementsByClassName("nested")[7]
+    let removeDiv9 = document.getElementsByClassName("nested")[8]
+    
+    let namePrompt = prompt("Player (X) Name") 
+    let namePrompt2 = prompt("Player (O) Name")
+    
+    if (namePrompt !== undefined) {
+        playerOneName.textContent = namePrompt + " (X)"
+    }
+    if (namePrompt2 !== undefined) { 
+        playerTwoName.textContent = namePrompt2 + " (O)"
+    }
+    if (removeDiv1.classList.contains("X")) {
+        removeDiv1.classList.remove("X")
+    } else {
+        removeDiv1.classList.remove("O")
+    }
+
+    if (removeDiv2.classList.contains("X")) {
+        removeDiv2.classList.remove("X")
+    } else {
+        removeDiv2.classList.remove("O")
+    }
+
+    if (removeDiv3.classList.contains("X")) {
+        removeDiv3.classList.remove("X")
+    } else {
+        removeDiv3.classList.remove("O")
+    }
+
+    if (removeDiv4.classList.contains("X")) {
+        removeDiv4.classList.remove("X")
+    } else {
+        removeDiv4.classList.remove("O")
+    }
+
+    if (removeDiv5.classList.contains("X")) {
+        removeDiv5.classList.remove("X")
+    } else {
+        removeDiv5.classList.remove("O")
+    }
+
+    if (removeDiv6.classList.contains("X")) {
+        removeDiv6.classList.remove("X")
+    } else {
+        removeDiv6.classList.remove("O")
+    }
+
+    if (removeDiv7.classList.contains("X")) {
+        removeDiv7.classList.remove("X")
+    } else {
+        removeDiv7.classList.remove("O")
+    }
+
+    if (removeDiv8.classList.contains("X")) {
+        removeDiv8.classList.remove("X")
+    } else {
+        removeDiv8.classList.remove("O")
+    }
+
+    if (removeDiv9.classList.contains("X")) {
+        removeDiv9.classList.remove("X")
+    } else {
+        removeDiv9.classList.remove("O")
+    }
+ 
+
+    board = [
+        [undefined, undefined, undefined],
+        [undefined, undefined, undefined],
+        [undefined, undefined, undefined]
+    ];
+
+    function whoMovesFirst () {
+        let randomNum = Math.random()
+        console.log(randomNum)
+        // alert("Who Moves First?")
+        if (randomNum >= .5) {
+            alert(namePrompt + " Moves First!")
+            playerOneName.classList.add("first")
+            // playerTwoName.classList.add("second")
+        } else {
+            alert(namePrompt2 + " Moves First!")
+            playerTwoName.classList.add("first")
+            // playerOneName.classList.add("second")
+        }
+    }
+
+    whoMovesFirst()
+
+    
+
+    tableElement.style.visibility = "visible";
+    newButton.style.visibility = "hidden";
+
+
+    
+
+}
+
+newButton.addEventListener("click", resetBoard)
 
