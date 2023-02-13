@@ -16,8 +16,8 @@ let playerTwoName = document.getElementById("playerTwo")
 let playerOneScore = document.getElementById("playerOneScore")
 let playerTwoScore = document.getElementById("playerTwoScore")
 let scoreKeeping = document.getElementById("scoreKeeping")
-let scoreX = 1
-let scoreO = 1
+let scoreX = 0
+let scoreO = 0
 
 
 
@@ -239,20 +239,35 @@ tableElement.addEventListener("click", playerMove)
 
 function checkWin () {
     
+    
     if ((board[0][0] == "X" && board[0][1] == "X" && board[0][2] == "X") || (board[1][0] == "X" && board[1][1] == "X" && board[1][2] == "X") || (board[2][0] == "X" && board[2][1] == "X" && board[2][2] == "X") || (board[0][0] == "X" && board[1][0] == "X" && board[2][0] == "X") || (board[0][1] == "X" && board[1][1] == "X" && board[2][1] =="X") || (board[0][2] == "X" && board[1][2] == "X" && board[2][2] =="X") || (board[0][0] == "X" && board[1][1] == "X" && board[2][2] =="X") || (board[0][2] == "X" && board [1][1] == "X" && board[2][0] =="X")) {
+        scoreX = scoreX + 1
         playerOneScore.textContent = playerOneScore.textContent + scoreX
-        let message = "Game Over! X Wins!"
+        const message = "Game Over! X Wins!"
         alert(message)
-        scoreX = scoreX++
+
         
-    } else if ((board[0][0] =="O" && board[0][1] =="O" && board[0][2] =="O") || (board[1][0] =="O" && board[1][1] =="O" && board[1][2] =="O") || (board[2][0] =="O" && board[2][1] =="O" && board[2][2] =="O") || (board[0][0] =="O" && board[1][0] =="O" && board[2][0] =="O") || (board[0][1] =="O" && board[1][1] =="O" && board[2][1]  =="O") || (board[0][2] =="O" && board[1][2] =="O" && board[2][2] =="O") || ((board[0][0] && board[1][1] && board[2][2]) =="O") || ((board[0][2] && board [1][1] && board[2][0]) =="O")) {
-        playerTwoScore.textContent = playerTwoScore.textContent + scoreO
-        let message2 = "Game Over! O Wins!"
+        
+        
+        
+    } else if ((board[0][0] =="O" && board[0][1] =="O" && board[0][2] =="O") || (board[1][0] =="O" && board[1][1] =="O" && board[1][2] =="O") || (board[2][0] =="O" && board[2][1] =="O" && board[2][2] =="O") || (board[0][0] =="O" && board[1][0] =="O" && board[2][0] =="O") || (board[0][1] =="O" && board[1][1] =="O" && board[2][1]  =="O") || (board[0][2] =="O" && board[1][2] =="O" && board[2][2] =="O") || (board[0][0] =="O" && board[1][1] =="O" && board[2][2]) =="O" || (board[0][2] =="O" && board [1][1] =="O" && board[2][0] =="O")) {
+        scoreO = scoreO + 1
+        playerTwoScore.textContent = playerTwoScore.textContent + scoreO // WHY IS SCORE NOT UPDATING PROPERLY FOR BOTH X & O.
+        const message2 = "Game Over! O Wins!"
         alert(message2)
-        scoreO = scoreO++
         
+
+
+    } else if ((board[0][0] == "X" || board[0][0] == "O") && (board[0][1] == "X" || board[0][1] == "O") && (board[0][2] == "X" || board[0][2] == "O") && (board[1][0] == "X" || board[1][0] == "O") && (board[1][1] == "X" || board[1][1] == "O") && (board[1][2] == "X" || board[1][2] == "O") && (board[2][0] == "X" || board[2][0] == "O") && (board[2][1] == "X" || board[2][1] == "O") && (board[2][2] == "X" || board[2][2]== "O") ) {
+        alert("Tie Game!")
     }
 }
+        
+    // function checkBoard(data) {
+    //     return typeof data != undefined // CANNOT GET TO WORK
+    // }
+
+
 
 // NEED TO FIGURE OUT SCORE COUNTER 
 // TIES
