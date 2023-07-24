@@ -55,6 +55,7 @@ table {
     font-weight: bolder;
     font-family: monospace;
     margin: 1%;
+    cursor: pointer;
 }
 
 #scoreKeeping {
@@ -103,6 +104,7 @@ table {
 .X {
     background-image: url("https://img.freepik.com/free-photo/texture-poster-drawing-canvas-creative_1194-8218.jpg?w=740&t=st=1675959022~exp=1675959622~hmac=f569629b330bc423ef22217771678c981939573fa19fa2926e9261c9d6b895f6forcejpeg=true"); 
     background-size: contain;
+    cursor: pointer;
 }
 
 .O {
@@ -129,5 +131,6 @@ table {
     position: fixed;
     padding: 1em;
     margin-top: 40vh;
+    cursor: pointer;
 }
 
