@@ -85,7 +85,6 @@ function startGameFunction () {
     
     
     whoMovesFirst(namePrompt, namePrompt2)
-
     scoreKeeping.style.visibility = "visible";
     newButton.style.visibility = "hidden";
 }
@@ -95,6 +94,8 @@ function startNewGameFunction () {
     let namePrompt2 = prompt("Player (O) Name")
     playerOneScore.textContent =  "X Games Won :" + " " + "0"
     playerTwoScore.textContent =  "O Games Won :" + " " + "0"
+    scoreX = 0;
+    scoreO = 0;
     
     if (namePrompt !== undefined) {
         playerOneName.textContent = namePrompt + " (X)"
@@ -108,12 +109,88 @@ function startNewGameFunction () {
         // playerTwoName.style.border = "2px solid white"
     } 
 
-    tableElement.style.visibility = "visible"
-
+    let removeDiv1 = document.getElementsByClassName("nested")[0]
+    let removeDiv2 = document.getElementsByClassName("nested")[1]
+    let removeDiv3 = document.getElementsByClassName("nested")[2]
+    let removeDiv4 = document.getElementsByClassName("nested")[3]
+    let removeDiv5 = document.getElementsByClassName("nested")[4]
+    let removeDiv6 = document.getElementsByClassName("nested")[5]
+    let removeDiv7 = document.getElementsByClassName("nested")[6]
+    let removeDiv8 = document.getElementsByClassName("nested")[7]
+    let removeDiv9 = document.getElementsByClassName("nested")[8]
     
+    // let namePrompt = prompt("Player (X) Name") 
+    // let namePrompt2 = prompt("Player (O) Name")
     
-    whoMovesFirst(namePrompt, namePrompt2)
+    // if (namePrompt !== undefined) {
+    //     playerOneName.textContent = namePrompt + " (X)"
+    // }
+    // if (namePrompt2 !== undefined) { 
+    //     playerTwoName.textContent = namePrompt2 + " (O)"
+    // }
+    if (removeDiv1.classList.contains("X")) {
+        removeDiv1.classList.remove("X")
+    } else {
+        removeDiv1.classList.remove("O")
+    }
 
+    if (removeDiv2.classList.contains("X")) {
+        removeDiv2.classList.remove("X")
+    } else {
+        removeDiv2.classList.remove("O")
+    }
+
+    if (removeDiv3.classList.contains("X")) {
+        removeDiv3.classList.remove("X")
+    } else {
+        removeDiv3.classList.remove("O")
+    }
+
+    if (removeDiv4.classList.contains("X")) {
+        removeDiv4.classList.remove("X")
+    } else {
+        removeDiv4.classList.remove("O")
+    }
+
+    if (removeDiv5.classList.contains("X")) {
+        removeDiv5.classList.remove("X")
+    } else {
+        removeDiv5.classList.remove("O")
+    }
+
+    if (removeDiv6.classList.contains("X")) {
+        removeDiv6.classList.remove("X")
+    } else {
+        removeDiv6.classList.remove("O")
+    }
+
+    if (removeDiv7.classList.contains("X")) {
+        removeDiv7.classList.remove("X")
+    } else {
+        removeDiv7.classList.remove("O")
+    }
+
+    if (removeDiv8.classList.contains("X")) {
+        removeDiv8.classList.remove("X")
+    } else {
+        removeDiv8.classList.remove("O")
+    }
+
+    if (removeDiv9.classList.contains("X")) {
+        removeDiv9.classList.remove("X")
+    } else {
+        removeDiv9.classList.remove("O")
+    }
+ 
+
+    board = [
+        [undefined, undefined, undefined],
+        [undefined, undefined, undefined],
+        [undefined, undefined, undefined]
+    ];
+    tableElement.style.visibility = "visible"  
+    
+    whoMovesFirst(namePrompt, namePrompt2);
     scoreKeeping.style.visibility = "visible";
     newButton.style.visibility = "hidden";
 }
@@ -232,15 +309,15 @@ function resetBoard (event) {
     let removeDiv8 = document.getElementsByClassName("nested")[7]
     let removeDiv9 = document.getElementsByClassName("nested")[8]
     
-    let namePrompt = prompt("Player (X) Name") 
-    let namePrompt2 = prompt("Player (O) Name")
+    // let namePrompt = prompt("Player (X) Name") 
+    // let namePrompt2 = prompt("Player (O) Name")
     
-    if (namePrompt !== undefined) {
-        playerOneName.textContent = namePrompt + " (X)"
-    }
-    if (namePrompt2 !== undefined) { 
-        playerTwoName.textContent = namePrompt2 + " (O)"
-    }
+    // if (namePrompt !== undefined) {
+    //     playerOneName.textContent = namePrompt + " (X)"
+    // }
+    // if (namePrompt2 !== undefined) { 
+    //     playerTwoName.textContent = namePrompt2 + " (O)"
+    // }
     if (removeDiv1.classList.contains("X")) {
         removeDiv1.classList.remove("X")
     } else {
@@ -304,7 +381,7 @@ function resetBoard (event) {
 
     
 
-    whoMovesFirst(namePrompt, namePrompt2)
+    // whoMovesFirst(namePrompt, namePrompt2)
 
     
 
